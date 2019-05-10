@@ -1,0 +1,5 @@
+./packer validate -var project="<GCP-Project-NAME>" -var source_image_family="ubuntu-1604-lts" test.json
+./packer build -var project="<GCP-Project-NAME>" -var source_image_family="ubuntu-1604-lts" test.json
+
+Example:
+./packer build -var project="ulta-image-hardening" -var source_image_family="ubuntu-1604-lts" test.json
