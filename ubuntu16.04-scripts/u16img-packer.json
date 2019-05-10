@@ -1,0 +1,33 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project`}}",
+      "source_image_family": "{{user `source_image_family`}}",
+      "source_image_project_id": "ubuntu-os-cloud",
+      "region": "us-central1",
+      "zone": "us-central1-a",
+      "disk_size": "12",
+      "image_name": "sahana-jenkins-agent-{{timestamp}}",
+      "image_description": "Demo Ubuntu Machine Image",
+      "ssh_username": "packer"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": 
+      [
+        "sudo apt-get update",
+        "sudo apt-get install -y default-jdk",
+        "sudo apt-get install -y wget",
+        "sudo apt-get install -y unzip",
+        "wget https://releases.hashicorp.com/packer/1.4.0/packer_1.4.0_linux_amd64.zip",
+        "unzip packer_1.4.0_linux_amd64.zip -d packer",
+        "sudo mv packer /usr/bin/",
+        "sudo apt install -y nginx",
+        "sudo apt-get install -y unicorn"
+      ]
+    }
+  ]
+}
