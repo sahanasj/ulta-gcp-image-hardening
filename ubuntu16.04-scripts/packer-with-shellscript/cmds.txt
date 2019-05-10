@@ -1,8 +1,8 @@
 Commands to be run if you on any ubuntu server where packer installed and configured with Google cloud SDK:
 
-$ packer validate -var region="us-west2" -var source_image_family="ubuntu-1604-lts" -var machine_type="n1-standard-1" -var zone="us-west2-b" -var project_id="ulta-image-hardening" <your-packer>.json
+$ packer validate -var region="us-west2" -var source_image_family="ubuntu-1604-lts" -var machine_type="n1-standard-1" -var zone="us-west2-b" -var project="ulta-image-hardening" <your-packer>.json
 
-$ packer build -var region="us-west2" -var source_image_family="ubuntu-1604-lts" -var machine_type="n1-standard-1" -var zone="us-west2-b" -var project_id="ulta-image-hardening" <your-packer>.json
+$ packer build -var region="us-west2" -var source_image_family="ubuntu-1604-lts" -var machine_type="n1-standard-1" -var zone="us-west2-b" -var project="ulta-image-hardening" <your-packer>.json
 
 Commands to be run if you on Google cloud shell:
 
