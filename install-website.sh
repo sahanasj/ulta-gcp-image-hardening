@@ -18,3 +18,4 @@ rvmsudo rvm fix-permissions
 rvmsudo rvm install 2.2.2
 rvmsudo rvm install 2.5.3
 sudo gem install rails -v 4.1.0
+pip install -r requirements.txt
