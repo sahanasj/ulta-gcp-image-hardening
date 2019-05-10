@@ -1,0 +1,23 @@
+{
+  "builders": [
+    {
+      "type": "googlecompute",
+      "project_id": "{{user `project`}}",
+      "source_image_family": "{{user `source_image_family`}}",
+      "source_image_project_id": "ubuntu-os-cloud",
+      "region": "us-central1",
+      "zone": "us-central1-a",
+      "disk_size": "14",
+      "image_name": "sahana-jenkins-agent-{{timestamp}}",
+      "image_description": "Demo Ubuntu Machine Image",
+      "ssh_username": "packer"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "script": "init-package.sh",
+      "execute_command": "echo 'packer' | sudo -S sh -c '{{ .Vars }} {{ .Path }}'"
+    }
+  ]
+}
